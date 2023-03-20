@@ -1,0 +1,121 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    background-color: lightcoral;
+    border-bottom: 2px solid lightgray;
+    border-radius: 2px;
+    width: 100%;
+    padding: 1px;
+    font-family: 'Nunito', sans-serif;
+    font-size: medium;
+}
+
+.title {
+    margin-left: 20px;
+}
+
+.table-container {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    font-family: 'Nunito', sans-serif;
+}
+
+table,
+th,
+td {
+    border-bottom: 3px solid lightcoral;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 15px;
+}
+
+th {
+    text-align: left;
+    font-weight: 800;
+}
+
+.dlt-btn {
+
+    width: 40px;
+    height: 40px;
+    border-radius: 25px;
+    border: 2px solid rgb(231, 50, 50);
+    background-color: #fff;
+    cursor: pointer;
+    box-shadow: 0 0 10px #333;
+    overflow: hidden;
+    transition: .3s;
+
+}
+
+.dlt-btn:hover {
+    background-color: rgb(245, 207, 207);
+    transform: scale(1.2);
+    box-shadow: 0 0 4px #111;
+    transition: .3s;
+}
+
+.delete-btn {
+    color: rgb(231, 50, 50);
+}
+
+.add-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.add-book {
+    cursor: pointer;
+    box-shadow: 0 0 5px gray;
+    text-align: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 100px;
+    border: 2px solid gray;
+    transition: .3s;
+}
+
+.add-book:hover {
+    background-color: lightcoral;
+    border-color: red;
+    transform: scale(1.2);
+}
+
+.status-btn-read {
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: lightgreen;
+    border: 2px solid green;
+    box-shadow: 2px 2px 5px lightgray;
+    transition: .3s;
+}
+
+.status-btn:hover {
+    transform: scale(1.1);
+}
+
+.status-btn-notRead {
+    display: none;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: lightcoral;
+    border: 2px solid red;
+    box-shadow: 2px 2px 5px lightgray;
+    transition: .3s;
+}
+
+.status-btn-notRead:hover {
+    transform: scale(1.1);
+}

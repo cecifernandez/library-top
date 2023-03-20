@@ -1,12 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MyLibrary</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="normalize.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Finger+Paint&family=Nunito:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <main>
+      <div class="container">
+        <header>
+          <h1 class="title">MyLibrary</h1>
+        </header>
+      </div>
+      <table class="table-container">
+        <tr>
+          <th>Book</th>
+          <th>Author</th> 
+          <th>Pages</th>
+          <th>Status</th>
+        <th></th>
+        </tr>
+        <tr>
+          <td>Twilight</td>
+          <td>Stephenie Meyer</td>
+          <td>500</td>
+          <td><button class="status-btn-read">Read</button>
+            <button class="status-btn-notRead">Not read</button></td>
+          
+
+          <td><button class="dlt-btn"><i class="fa-solid fa-trash-can delete-btn fa-lg"></i></button></td>
+
+        </tr>
+       
+        
+      </table>
+
+      </div>
+      <div class="add-container">
+      <button class="add-book"><i class="fa-solid fa-plus fa-2xl add-btn"></i></button>
+
+      </div>
+    </main>
+  </body>
 </html>
