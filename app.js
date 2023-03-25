@@ -5,25 +5,12 @@ const addBtn = document.querySelector("#add-btn");
 const title = document.querySelector("#book-title");
 const author = document.querySelector("#book-author");
 const pages = document.querySelector("#book-pages");
-const status = document.querySelector("#btn-read");
 const confirmBtn = document.querySelector("#confirm");
 const cancelBtn = document.querySelector("#cancel");
 const formBook = document.querySelector("#form-container");
 const overlay = document.querySelector("#overlay-form");
-const submitBook = document.querySelector("#new-book");
 
-function changeStatus() {
-  readBtn.addEventListener("click", () => {
-    readBtn.style.display = "none";
-    notReadBtn.style.display = "block";
-  });
-  notReadBtn.addEventListener("click", () => {
-    readBtn.style.display = "block";
-    notReadBtn.style.display = "none";
-  });
-}
-
-changeStatus();
+let library = [];
 
 function addBook() {
   addBtn.addEventListener("click", () => {
@@ -37,13 +24,9 @@ function addBook() {
 
 addBook();
 
-cancelBtn.addEventListener("click", () => {
-  window.location.reload();
-});
-
 confirmBtn.addEventListener("click", (e) => {
   e.preventDefault();
-  addBookToLibrary();
+  checkFields();
   formBook.style.display = "none";
   overlay.style.display = "none";
   confirmBtn.style.display = "none";
@@ -51,41 +34,49 @@ confirmBtn.addEventListener("click", (e) => {
   addBtn.style.display = "block";
 });
 
-function deleteBook() {
-  deleteBtn.addEventListener("click", () => {});
+function checkFields(event) {
+  if (title.value === "" || author.value === "" || pages.value === "") {
+    alert("Please, fill all the fields");
+    event.preventDefault;
+  } else {
+    addBookToLibrary();
+  }
 }
 
-deleteBook();
-
-let library = [];
-
-function Book(title, author, pages, status) {
-  (this.title = title),
-    (this.author = author),
-    (this.pages = pages),
-    (this.status = status);
+function Book(title, author, pages) {
+  (this.title = title), (this.author = author), (this.pages = pages);
 }
 
 function addBookToLibrary() {
-  let newBook = new Book(title.value, author.value, pages.value, status);
+  let newBook = new Book(title.value, author.value, pages.value);
   library.push(newBook);
   render();
 }
 
 function render() {
-  submitBook.innerHTML = "";
-  library.forEach((book) => {
-    const bookEl = `<tr>
-    <td>${book.title}</td>
-    <td>${book.author}</td>
-    <td>${book.pages}</td>
-    <td><button class="status-btn-read" id="btn-read">${book.status}</button>
-      <button class="status-btn-notRead" id="btn-notRead">Not read</button></td>
+  let table = document.querySelector("#table-body");
+  table.innerHTML = "";
+
+  for (let i = 0; i < library.length; i++) {
+    let book = library[i];
+    let bookRow = document.createElement("tr");
+    bookRow.innerHTML = ` 
     
+    <td class="td-class">${book.title}</td>
+    <td class="td-class">${book.author}</td>
+    <td class="td-class">${book.pages}</td>
+    <td class="td-class">
+    <input type="checkbox" class="checkbox" value="checkbox">
+    </td>
+    <td class="td-class"><button class="dlt-btn" id="dlt-btn" onclick="removeBook(${i})"><i class="fa-solid fa-trash-can delete-btn fa-lg"></i></button></td>`;
 
-    <td><button class="dlt-btn" id="dlt-btn"><i class="fa-solid fa-trash-can delete-btn fa-lg"></i></button></td>
-
-  </tr>`;
-    submitBook.insertAdjacentHTML("afterend", bookEl);
-  });
+    table.appendChild(bookRow);
+  }
 }
+
+function removeBook(index) {
+  library.splice(index, 1);
+  render();
+}
+
+

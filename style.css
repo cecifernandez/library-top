@@ -26,17 +26,20 @@
 }
 
 table,
-th,
-td {
-
+th, td {
+padding: 15px;
     border-bottom: 3px solid lightcoral;
     border-collapse: collapse;
 }
+.row-class{
+    
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Nunito', sans-serif;
+}
 
-
-
-th,
-td {
+th {
     padding: 15px;
 }
 
@@ -95,33 +98,17 @@ th {
     transform: scale(1.2);
 }
 
-.status-btn-read {
+.checkbox {
+    appearance: none;
     cursor: pointer;
-    border-radius: 5px;
-    padding: 5px;
+    width: 25px;
+    height: 25px;
+    border: 2px solid #888;
+    border-radius: 20px;
+}
+
+.checkbox:checked {
     background-color: lightgreen;
-    border: 2px solid green;
-    box-shadow: 2px 2px 5px lightgray;
-    transition: .3s;
-}
-
-.status-btn-read:hover {
-    transform: scale(1.1);
-}
-
-.status-btn-notRead {
-    display: none;
-    cursor: pointer;
-    border-radius: 5px;
-    padding: 5px;
-    background-color: lightcoral;
-    border: 2px solid red;
-    box-shadow: 2px 2px 5px lightgray;
-    transition: .3s;
-}
-
-.status-btn-notRead:hover {
-    transform: scale(1.1);
 }
 
 input {
@@ -132,7 +119,7 @@ input {
     padding: 10px;
 }
 
-.form-btn{
+.form-btn {
     display: flex;
     margin-top: 20px;
 }
@@ -169,7 +156,7 @@ input {
 
 }
 
-.form-container{
+.form-container {
     position: fixed;
     top: 0;
     right: 0;
