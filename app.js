@@ -50,10 +50,13 @@ function Book(title, author, pages) {
 function addBookToLibrary() {
   let newBook = new Book(title.value, author.value, pages.value);
   library.push(newBook);
+  saveToStorage();
   render();
 }
 
 function render() {
+  checkStorage();
+
   let table = document.querySelector("#table-body");
   table.innerHTML = "";
 
@@ -66,7 +69,7 @@ function render() {
     <td class="td-class">${book.author}</td>
     <td class="td-class">${book.pages}</td>
     <td class="td-class">
-    <input type="checkbox" class="checkbox" value="checkbox">
+    <input type="checkbox" class="checkbox" value="checkbox" >
     </td>
     <td class="td-class"><button class="dlt-btn" id="dlt-btn" onclick="removeBook(${i})"><i class="fa-solid fa-trash-can delete-btn fa-lg"></i></button></td>`;
 
@@ -76,7 +79,20 @@ function render() {
 
 function removeBook(index) {
   library.splice(index, 1);
+  saveToStorage();
   render();
 }
 
+function saveToStorage() {
+  localStorage.setItem("library", JSON.stringify(library));
+}
 
+function checkStorage() {
+  if (localStorage.getItem("library")) {
+    library = JSON.parse(localStorage.getItem("library"));
+  } else {
+    library = [];
+  }
+}
+
+render();
