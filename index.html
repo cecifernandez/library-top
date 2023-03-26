@@ -1,12 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MyLibrary</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="normalize.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Finger+Paint&family=Nunito:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+
 </head>
-<body>
-    
-</body>
+  <body>
+    <main>
+      <div class="container">
+        <header>
+          <h1 class="title">MyLibrary</h1>
+        </header>
+      </div>
+      
+      <table class="table-container"  id="add-row">
+        <tr>
+          <th>Book</th>
+          <th>Author</th> 
+          <th>Pages</th>
+          <th>Read</th>
+          <th></th>
+      </tr>
+      
+        <tbody id="table-body"></tbody>
+      
+      </table>
+    </div>
+    <div class="add-container">
+      <button class="add-book" id="add-btn"><i class="fa-solid fa-plus fa-2xl add-btn"></i></button>
+     
+    </div>
+    <div class="form-container" style="display: none;" id="form-container">
+      <form class="form-book"  id="form">
+        <label for="title">Title</label>
+        <input type="text" name="title" id="book-title" placeholder="Twilight">
+        <label for="author">Author</label>
+        <input type="text" name="author" id="book-author" placeholder="Stephenie Meyer">
+        <label for="pages">Book pages</label>
+        <input type="number" name="pages" id="book-pages" placeholder="350">
+        <div class="form-btn" id="form-btn">
+          <button class="confirm-add" id="confirm"><i class="fa-solid fa-check fa-2xl"></i></button>
+        <button class="cancel-btn" id="cancel"><i class="fa-solid fa-xmark fa-2xl"></i></button>
+        </div>
+        
+      </form>
+      <div class="overlay" id="overlay-form"></div>
+    </div>
+  
+      
+    </main>
+    <script src="app.js"></script>  
+  </body>
 </html>
